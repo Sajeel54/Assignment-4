@@ -10,9 +10,9 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class frag2 extends Fragment {
-
 
     public frag2() {
         // Required empty public constructor
@@ -26,8 +26,9 @@ public class frag2 extends Fragment {
 
         SharedPreferences sharedPreferences = getContext().getSharedPreferences("content", Context.MODE_PRIVATE);
         String msg = sharedPreferences.getString("msg", "Hello!");
-        TextView display = view.findViewById(R.id.display_msg);
-        display.setText(msg);
+//        TextView display = (TextView) view.findViewById(R.id.display_msg);
+//        display.setText(msg);
+        Toast.makeText(getContext(), msg, Toast.LENGTH_SHORT).show();
 
 
         return inflater.inflate(R.layout.fragment_frag2, container, false);

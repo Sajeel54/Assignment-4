@@ -37,12 +37,12 @@ public class frag1 extends Fragment {
                 AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
                 SharedPreferences.Editor editor = sharedPreferences.edit();
                 String msg = input.getText().toString();
+                input.setText("");
                 editor.putString("msg", msg);
                 editor.apply();
                 editor.commit();
             }
         });
-
 
         return view;
     }
